@@ -1,0 +1,75 @@
+# Use C-a as the prefix/leader instead of C-b
+unbind C-b
+set-option -g prefix C-a
+bind-key C-a send-prefix
+
+# split panes with | and -
+bind | split-window -h
+bind - split-window -v
+unbind '"'
+unbind %
+
+# prefix -> back-one-character
+bind-key C-b send-prefix
+
+# Mouse control
+set -g mouse on
+#set -g mouse-select-pane on
+
+# Vim pane navigation
+# <prefix> [hjkl]
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+# Pane navigation with Meta/Alt
+bind -n M-h select-pane -L
+bind -n M-j select-pane -D
+bind -n M-k select-pane -U
+bind -n M-l select-pane -R
+# Pane navigation with Alt + arrow keys
+#bind -n M-Left select-pane -L
+#bind -n M-Right select-pane -R
+#bind -n M-Up select-pane -U
+#bind -n M-Down select-pane -D
+
+# Cycle through zoomed with `<prefix> a`, `a`, `a`, ...
+bind -r a select-pane -t .+1 \;  resize-pane -Z
+
+# Style/colors
+setw -g clock-mode-colour colour5
+setw -g mode-style 'fg=colour1 bg=colour18 bold'
+set -g pane-border-style 'fg=colour19 bg=colour0'
+set -g pane-active-border-style 'bg=colour0 fg=colour9'
+
+# Vim tmux buffer copy/paste
+bind P paste-buffer
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind-key -T copy-mode-vi y send-keys -X copy-selection
+bind-key -T copy-mode-vi r send-keys -X rectangle-toggle
+
+# Status bar
+set -g status-position bottom
+set -g status-justify left
+set -g status-style 'bg=colour12 fg=colour1 dim'
+set -g status-left ''
+set -g status-right ' #S '  # The session name
+set -g status-right-length 50
+set -g status-left-length 20
+
+# Tmux Plugin Manager
+# https://github.com/tmux-plugins/tpm
+# plugins
+# Using the format specified here that works with tmux.conf.local:
+# https://github.com/tmux-plugins/tpm/blob/master/docs/tpm_not_working.md
+set -g @tpm_plugins '          \
+  tmux-plugins/tpm             \
+  tmux-plugins/tmux-sensible   \
+  tmux-plugins/tmux-resurrect  \
+  tmux-plugins/tmux-continuum  \
+'
+# Tell tmux-resurrect to restore vim sessions
+set -g @resurrect-strategy-vim 'session'
+
+# Initialize the Tmux Plugin Manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'

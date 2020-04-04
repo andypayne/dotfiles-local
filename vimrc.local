@@ -1,0 +1,53 @@
+set incsearch
+set ignorecase
+set smartcase
+set hlsearch
+set foldlevelstart=20
+
+" Changes from Ubuntu
+set conceallevel=2
+set visualbell  " Flash the screen instead of sounding an errorbell
+let g:vim_markdown_conceal = 1
+"highlight CursorLine   cterm=bold,underline
+"let maplocalleader = "'"
+" Not currently using - map leader to comma -
+"let mapleader = ","
+set foldlevelstart=20  " Expand folds
+
+
+" Sometimes I like to lay on my lawn without a shirt on!
+nnoremap <Up> k
+nnoremap <Down> j
+nnoremap <Left> h
+nnoremap <Right> l
+inoremap <up> k
+inoremap <down> j
+inoremap <left> h
+inoremap <right> l
+
+" column 80 boundary highlight
+"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+"match OverLength /\%81v.\+/
+
+" Configure ale linting for javascript
+let g:ale_linters = {
+\   'javascript': ['eslint', 'esnext'],
+\}
+
+" Disable ALE
+"set ale:ale_enabled 0
+"augroup! ale
+
+augroup ale
+  autocmd!
+
+  let g:ale_lint_on_text_changed = 0
+  let g:ale_lint_on_enter = 0
+augroup END
+
+" Don't tab complete or search in these files
+set wildignore+=*.a,*.o
+set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.jpeg,*.png,*.svg
+set wildignore+=.DS_Store,.git.hg,.svn
+set wildignore+=*~,*.swp,*.tmp
+

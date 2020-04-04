@@ -1,0 +1,11 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "workbench.colorTheme": "Level Up",
+    "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "window.zoomLevel": 0,
+    "editor.tabSize": 2,
+    "vim.hlsearch": true,
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "eslint.enable": false
+}

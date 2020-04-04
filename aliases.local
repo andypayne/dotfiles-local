@@ -1,0 +1,27 @@
+bkgd() {
+  "$@" &
+}
+
+# OS dependent options
+case `uname` in
+  Darwin)
+    alias ls='ls -lrtaFG'
+  ;;
+  Linux)
+    alias ls='ls -alFG --color'
+    alias o='bkgd nautilus "$@"'
+  ;;
+esac
+
+# Git
+alias glog='git log --pretty --graph --oneline --all'
+alias gd="git diff --ignore-all-space --ignore-space-at-eol --ignore-space-change --ignore-blank-lines -- . ':(exclude)*package-lock.json'"
+alias gb='git branch --list -a | more'
+
+# History
+alias h='history 1'
+
+jsonpp() {
+  python -mjson.tool "$@"
+}
+
