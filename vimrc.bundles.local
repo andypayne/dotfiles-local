@@ -1,5 +1,12 @@
 UnPlug 'ale'
 UnPlug 'w0rp/ale'
 UnPlug 'ALE'
-
+Plug 'vim-syntastic/syntastic'
+Plug 'https://github.com/majutsushi/tagbar.git'
+Plug 'https://github.com/vim-airline/vim-airline'
+Plug 'https://github.com/vim-airline/vim-airline-themes'
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+let g:deoplete#enable_at_startup = 1
 

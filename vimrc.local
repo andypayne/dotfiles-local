@@ -14,7 +14,6 @@ let g:vim_markdown_conceal = 1
 "let mapleader = ","
 set foldlevelstart=20  " Expand folds
 
-
 " Sometimes I like to lay on my lawn without a shirt on!
 nnoremap <Up> k
 nnoremap <Down> j
@@ -50,4 +49,12 @@ set wildignore+=*.a,*.o
 set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.jpeg,*.png,*.svg
 set wildignore+=.DS_Store,.git.hg,.svn
 set wildignore+=*~,*.swp,*.tmp
+
+" Tagbar
+nmap <F8> :TagbarToggle<CR>
+
+" For deoplete
+if (has('pythonx'))
+  set pyxversion=3
+endif
 
