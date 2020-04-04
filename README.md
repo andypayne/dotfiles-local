@@ -1,5 +1,8 @@
 # Local overrides for [Thoughtbot Dotfiles](https://github.com/thoughtbot/dotfiles)
 
+See the [Thoughtbot Dotfiles](https://github.com/thoughtbot/dotfiles) for more
+information on getting setup. Also see my [dev cheatsheet](https://github.com/andypayne/dev_cheatsheet) for ways I use these.
+
 ## Installation
 
 Clone into `~/dotfiles-local`, then add the symlinks:
