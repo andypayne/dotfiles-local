@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+// URL Decode
+if (process.argv.length <= 2) {
+  console.log('Error - requires a string argument');
+  process.exit(1);
+}
+console.log(decodeURIComponent(process.argv.slice(2).join(' ')));
