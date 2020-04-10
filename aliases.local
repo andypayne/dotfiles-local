@@ -25,3 +25,8 @@ jsonpp() {
   python -mjson.tool "$@"
 }
 
+# ripgrep - find filenames that match a pattern (not file contents)
+rgf() {
+  rg --files | rg "$@"
+}
+
