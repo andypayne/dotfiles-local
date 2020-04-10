@@ -27,6 +27,9 @@ inoremap <right> l
 " column 80 boundary highlight
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "match OverLength /\%81v.\+/
+" Dim the column 80 colorcolumn a bit
+highlight ColorColumn ctermbg=8
+
 
 " Configure ale linting for javascript
 let g:ale_linters = {
