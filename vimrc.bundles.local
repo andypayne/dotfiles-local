@@ -8,5 +8,7 @@ Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
 let g:deoplete#enable_at_startup = 1
 
