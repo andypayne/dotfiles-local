@@ -15,6 +15,32 @@ ln -s ~/dotfiles-local/gitconfig.local ~/.gitconfig.local
 ln -s ~/dotfiles-local/tmux.conf.local ~/.tmux.conf.local
 ```
 
+### Plugins etc
+
+#### Powerlevel10k
+
+Install [Powerlevel10k](https://github.com/romkatv/powerlevel10k#manual) for zsh, basically:
+```zsh
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+# Not needed - echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc.local
+```
+
+#### Deoplete for vim
+
+Install [Deoplete](https://github.com/Shougo/deoplete.nvim) for Vim:
+
+```zsh
+pip3 install --user pynvim
+```
+
+Check for python support in Vim:
+```vim
+:python import sys; print(sys.version)
+```
+If this returns an error, then you may need to reinstall Vim with python
+support.
+
+
 ## Installation of Thoughtbot Dotfiles on Linux
 
 Clone the repo, and then install rcm:
