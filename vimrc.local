@@ -70,9 +70,20 @@ autocmd QuickFixCmdPost    l* nested lwindow
 " (typescriptArrowFuncDef)
 "set re=1
 
+" https://github.com/SirVer/ultisnips/issues/512#issuecomment-111733631
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+" Disable mind-bogglingly annoying identifier completion (?)
+let g:ycm_auto_trigger = 0
+let g:ycm_min_num_of_chars_for_completion = 99
+
 " For UltiSnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " :UltiSnipsEdit will split the window
 let g:UltiSnipsEditSplit="vertical"
+
