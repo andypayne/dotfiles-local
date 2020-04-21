@@ -10,5 +10,6 @@ Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'leafgarland/typescript-vim'
 let g:deoplete#enable_at_startup = 1
 
