@@ -66,7 +66,9 @@ autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
 " For yats.vim - the new regexp engine
-set re=1
+" Disabling this for now due to the slowness issue on arrow functions
+" (typescriptArrowFuncDef)
+"set re=1
 
 " For UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
