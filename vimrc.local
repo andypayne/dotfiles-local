@@ -65,3 +65,12 @@ endif
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
+" For yats.vim - the new regexp engine
+set re=1
+
+" For UltiSnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" :UltiSnipsEdit will split the window
+let g:UltiSnipsEditSplit="vertical"
