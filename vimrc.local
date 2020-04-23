@@ -87,3 +87,4 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " :UltiSnipsEdit will split the window
 let g:UltiSnipsEditSplit="vertical"
 
+"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
