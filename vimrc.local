@@ -88,3 +88,9 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
 
 "inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" Spell check highlighting colors
+highlight clear SpellBad
+"highlight SpellBad cterm=underline
+highlight SpellBad ctermbg=16
+
