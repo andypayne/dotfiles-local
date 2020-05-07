@@ -30,3 +30,10 @@ rgf() {
   rg --files | rg "$@"
 }
 
+# tmux restore
+# NOTE - relies on $TMUX_DIR
+alias mux='pgrep -vx tmux > /dev/null && \
+           tmux new -d -s delete-me && \
+           tmux run-shell $TMUX_DIR/plugins/tmux-resurrect/scripts/restore.sh && \
+           tmux kill-session -t delete-me && \
+           tmux attach || tmux attach'

@@ -6,6 +6,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# tmux
+TMUX_DIR=$HOME/.tmux
+
 # Visual Studio Code
 export PATH=$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin/":~/bin
 
