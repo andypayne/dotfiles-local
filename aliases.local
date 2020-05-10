@@ -37,3 +37,7 @@ alias mux='pgrep -vx tmux > /dev/null && \
            tmux run-shell $TMUX_DIR/plugins/tmux-resurrect/scripts/restore.sh && \
            tmux kill-session -t delete-me && \
            tmux attach || tmux attach'
+
+# For AWS Elastic Beanstalk node log tailing
+alias eblog='eb ssh --command "tail -f /var/log/nodejs/nodejs.log"'
+
