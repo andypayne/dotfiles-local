@@ -141,8 +141,11 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 [[ -f ~/dotfiles-local-priv/aliases.local ]] && source ~/dotfiles-local-priv/aliases.local
 
 # For the NVIDIA CUDA Toolkit
-if [ -x "$(command -v nvcc)" ]; then
+if [ -d "/usr/local/cuda-10.2" ]; then
   export PATH=/usr/local/cuda-10.2/bin:/usr/local/cuda-10.2/NsightCompute-2019.1${PATH:+:${PATH}}
   export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 fi
+
+# For pkg-config to use /usr/local/lib/pkgconfig (for OpenCV)
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig${PKG_CONFIG_PATH:+:${PKG_CONFIG_PATH}}
 
