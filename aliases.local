@@ -41,3 +41,6 @@ alias mux='pgrep -vx tmux > /dev/null && \
 # For AWS Elastic Beanstalk node log tailing
 alias eblog='eb ssh --command "tail -f /var/log/nodejs/nodejs.log"'
 
+# Watch GPU memory
+alias wgpu='watch -d -n 1 nvidia-smi'
+
