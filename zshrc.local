@@ -149,3 +149,6 @@ fi
 # For pkg-config to use /usr/local/lib/pkgconfig (for OpenCV)
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig${PKG_CONFIG_PATH:+:${PKG_CONFIG_PATH}}
 
+# Haskell - ghcup
+[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
+
