@@ -94,3 +94,6 @@ highlight clear SpellBad
 "highlight SpellBad cterm=underline
 highlight SpellBad ctermbg=16
 
+" NERDTree
+nmap <leader>ne :NERDTree<cr>
+

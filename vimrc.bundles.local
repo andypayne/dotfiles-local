@@ -17,4 +17,5 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'HerringtonDarkholme/yats.vim'
+Plug 'preservim/nerdtree'
 let g:deoplete#enable_at_startup = 1
