@@ -17,6 +17,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'preservim/nerdtree'
+"Plug 'preservim/nerdtree'  " Uninstalled to use vim-vinegar with netrw
 Plug 'andypayne/vim-checkbox'
+Plug 'tpope/vim-vinegar'
 let g:deoplete#enable_at_startup = 1
