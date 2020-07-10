@@ -20,4 +20,5 @@ Plug 'HerringtonDarkholme/yats.vim'
 "Plug 'preservim/nerdtree'  " Uninstalled to use vim-vinegar with netrw
 Plug 'andypayne/vim-checkbox'
 Plug 'tpope/vim-vinegar'
+Plug 'rhysd/vim-clang-format'
 let g:deoplete#enable_at_startup = 1
