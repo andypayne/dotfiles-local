@@ -16,6 +16,10 @@ bind-key C-b send-prefix
 set -g mouse on
 #set -g mouse-select-pane on
 
+# Disable the escape delay
+# https://www.reddit.com/r/vim/comments/40257u/delay_on_esc_with_tmux_and_vim/
+set -sg escape-time 0
+
 # Vim pane navigation
 # <prefix> [hjkl]
 bind h select-pane -L
