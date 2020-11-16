@@ -156,3 +156,7 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig${PKG_CONFIG_PATH:+:${PKG_CONFIG_
 if command -v heroku > /dev/null 2>&1; then
   HEROKU_AC_ZSH_SETUP_PATH=$HOME/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 fi
+
+# Love2D
+[[ -f /Applications/love.app/Contents/MacOS/love ]] && export PATH="/Applications/love.app/Contents/MacOS/:$PATH"
+

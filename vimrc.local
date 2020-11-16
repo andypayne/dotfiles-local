@@ -30,6 +30,15 @@ inoremap <right> l
 " Dim the column 80 colorcolumn a bit
 highlight ColorColumn ctermbg=8
 
+" Set the color scheme
+"elflord
+"industry
+"koehler
+"pablo
+"ron
+"torte
+"zellner
+colorscheme elflord
 
 " Configure ale linting for javascript
 let g:ale_linters = {
