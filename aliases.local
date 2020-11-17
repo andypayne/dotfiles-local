@@ -44,3 +44,6 @@ alias eblog='eb ssh --command "tail -f /var/log/nodejs/nodejs.log"'
 # Watch GPU memory
 alias wgpu='watch -d -n 1 nvidia-smi'
 
+# sox, for bytebeats
+alias tosox='sox -r 8000 -b 8 -c 1 -t raw -e signed-integer - -d'
+
