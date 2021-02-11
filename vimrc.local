@@ -113,8 +113,8 @@ let g:pymode_lint_ignore = "E501,W"
 let g:syntastic_python_pylint_post_args="--max-line-length=120"
 let g:syntastic_aggregate_errors = 1
 "ALEDisable
-let g:ale_python_flake8_args = '--ignore=E501,E303,E226,E231,E225,E302,E305,E701,E126,E123,E251,E201,E202,E124,E402'
-let g:ale_python_flake8_options = '--ignore=E501,E303,E226,E231,E225,E302,E305,E701,E126,E123,E251,E201,E202,E124,E402'
-let g:ale_python_pylint_options = '--disable=invalid-name,missing-docstring --max-line-length=120'
+let g:ale_python_flake8_args = '--ignore=E501,E303,E226,E231,E225,E302,E305,E701,E126,E123,E129,E251,E201,E202,E124,E402,W504'
+let g:ale_python_flake8_options = '--ignore=E501,E303,E226,E231,E225,E302,E305,E701,E126,E123,E129,E251,E201,E202,E124,E402,W504'
+let g:ale_python_pylint_options = '--disable=invalid-name,missing-docstring --max-line-length=180'
 
 
