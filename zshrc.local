@@ -109,6 +109,7 @@ export NVM_DIR="$HOME/.nvm"
 export PATH=$PATH:/usr/local/go/bin
 if command -v "go" > /dev/null 2>&1; then
   export GOPATH=$(go env GOPATH)
+  export PATH="$GOPATH:$GOPATH/bin:$PATH"
 fi
 
 # Anaconda - python
