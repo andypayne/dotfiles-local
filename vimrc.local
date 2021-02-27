@@ -107,14 +107,14 @@ highlight SpellBad ctermbg=16
 nmap <leader>ne :NERDTree<cr>
 
 let g:syntastic_python_checkers=['flake8']
-let g:syntastic_python_flake8_args=['--max-line-length=120', '--ignore=E501,W391']
+let g:syntastic_python_flake8_args=['--max-line-length=120', '--ignore=E501,W391,E265']
 let g:syntastic_python_pylint_args = "-d missing-docstring,invalid-name"
-let g:pymode_lint_ignore = "E501,W"
+let g:pymode_lint_ignore = "E501,E265,W"
 let g:syntastic_python_pylint_post_args="--max-line-length=120"
 let g:syntastic_aggregate_errors = 1
 "ALEDisable
-let g:ale_python_flake8_args = '--ignore=E501,E303,E226,E231,E225,E302,E305,E701,E126,E123,E129,E251,E201,E202,E124,E402,W504'
-let g:ale_python_flake8_options = '--ignore=E501,E303,E226,E231,E225,E302,E305,E701,E126,E123,E129,E251,E201,E202,E124,E402,W504'
+let g:ale_python_flake8_args = '--ignore=E501,E303,E226,E231,E225,E302,E305,E701,E126,E123,E129,E251,E201,E202,E124,E402,W504,E265'
+let g:ale_python_flake8_options = '--ignore=E501,E303,E226,E231,E225,E302,E305,E701,E126,E123,E129,E251,E201,E202,E124,E402,W504,E265'
 let g:ale_python_pylint_options = '--disable=invalid-name,missing-docstring --max-line-length=180'
 
 
