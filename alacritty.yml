@@ -185,3 +185,25 @@ schemes:
       white:   '#d6deeb'
 
 colors: *nightfly
+
+font:
+  use_thin_strokes: true
+  size: 12.0
+  normal:
+    family: "Inconsolata"
+    style: "Light"
+  bold:
+    family: "Inconsolata"
+    style: "Regular"
+  italic:
+    family: "Inconsolata"
+    style: "ExtraLight"
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+
+draw_bold_text_with_bright_colors: true
+
