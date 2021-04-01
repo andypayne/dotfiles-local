@@ -57,3 +57,8 @@ if command -v "fdfind" > /dev/null 2>&1; then
   alias fd=`command -v fdfind`
 fi
 
+# bat (batcat) - https://github.com/sharkdp/bat
+if command -v "batcat" > /dev/null 2>&1; then
+  alias bat=`command -v batcat`
+fi
+
