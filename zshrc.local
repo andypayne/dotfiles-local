@@ -145,7 +145,14 @@ if command -v "fd" > /dev/null 2>&1; then
   if command -v "bat" > /dev/null 2>&1; then
     export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :50 {}'"
   fi
+  # For Alt-c directory searching
+  if command -v "tree" > /dev/null 2>&1; then
+    export FZF_ALT_C_COMMAND='fd --type d . --color=never --hidden'
+    export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -50'"
+  fi
 fi
+# For Alt-c to work on the mac, or use Esc-c
+#bindkey "ç" fzf-cd-widget
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Location-specific config
