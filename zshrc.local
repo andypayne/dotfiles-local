@@ -136,9 +136,17 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # fzf
 # https://github.com/junegunn/fzf
+# fd (fdfind) - https://github.com/sharkdp/fd
+if command -v "fd" > /dev/null 2>&1; then
+  export FZF_DEFAULT_COMMAND='fd --type f --color=never --hidden'
+  export FZF_DEFAULT_OPTS='--no-height'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  # bat (batcat) - https://github.com/sharkdp/bat
+  if command -v "bat" > /dev/null 2>&1; then
+    export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :50 {}'"
+  fi
+fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_CTRL_T_COMMAND='fd --type f --color=never --hidden'
-export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :50 {}'"
 
 # Location-specific config
 [[ -f ~/dotfiles-local-priv/zshrc.local ]] && source ~/dotfiles-local-priv/zshrc.local

@@ -52,13 +52,14 @@ cheat() {
   curl cheat.sh/"$@" | bat
 }
 
+# Note: Aliases work fine for standalone use, but they won't work for fzf
+# integration (FZF_CTRL_T_COMMAND, etc). So use symlinks to ~/bin/... for that.
 # fd (fdfind) - https://github.com/sharkdp/fd
-if command -v "fdfind" > /dev/null 2>&1; then
-  alias fd=`command -v fdfind`
-fi
-
+#if command -v "fdfind" > /dev/null 2>&1; then
+#  alias fd=`command -v fdfind`
+#fi
 # bat (batcat) - https://github.com/sharkdp/bat
-if command -v "batcat" > /dev/null 2>&1; then
-  alias bat=`command -v batcat`
-fi
+#if command -v "batcat" > /dev/null 2>&1; then
+#  alias bat=`command -v batcat`
+#fi
 
