@@ -198,3 +198,7 @@ export PATH="$PATH:$HOME/bin/sox-14.4.2"
 # https://stackoverflow.com/questions/60557160/python3-8-fails-with-fatal-python-error-config-get-locale-encoding
 export LANG="en_US.UTF-8"
 
+if [ -d "$HOME/.local/bin" ]; then
+  export PATH="$PATH:$HOME/.local/bin"
+fi
+
