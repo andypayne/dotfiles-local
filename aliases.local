@@ -86,3 +86,11 @@ if command -v "fzf" > /dev/null 2>&1; then
 
 fi
 
+# Cycle python virtual environments
+renv() {
+  if [ "type deactivate" == 'deactivate is a shell function from env/bin/activate' ]; then
+    deactivate
+  fi
+  . ./env/bin/activate
+}
+
