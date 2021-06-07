@@ -5,7 +5,15 @@ Plug 'vim-syntastic/syntastic'
 Plug 'https://github.com/majutsushi/tagbar.git'
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/vim-airline/vim-airline-themes'
-Plug 'Shougo/deoplete.nvim'
+if has("unix")
+  let s:uname = system("uname -s")
+  if s:uname == "Darwin\n"
+    " Not installing deoplete on Darwin
+  else
+    Plug 'Shougo/deoplete.nvim'
+    let g:deoplete#enable_at_startup = 1
+  endif
+endif
 "Plug 'ternjs/tern_for_vim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
@@ -21,4 +29,3 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'andypayne/vim-checkbox'
 Plug 'tpope/vim-vinegar'
 Plug 'rhysd/vim-clang-format'
-let g:deoplete#enable_at_startup = 1
