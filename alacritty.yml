@@ -188,7 +188,7 @@ colors: *nightfly
 
 font:
   use_thin_strokes: true
-  size: 12.0
+  size: 11.0
   normal:
     family: "Inconsolata"
     style: "Light"
