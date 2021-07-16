@@ -95,3 +95,13 @@ renv() {
   . ./env/bin/activate
 }
 
+# ffprobe/ffmpeg to display the duration of a media file
+durat() {
+  ffprobe \
+    -v error \
+    -show_entries format=duration \
+    -of default=noprint_wrappers=1:nokey=1 \
+    -sexagesimal \
+    "$@"
+}
+
