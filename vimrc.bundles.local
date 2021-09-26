@@ -5,6 +5,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'https://github.com/majutsushi/tagbar.git'
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/vim-airline/vim-airline-themes'
+Plug 'evanleck/vim-svelte'
 if has("unix")
   let s:uname = system("uname -s")
   if s:uname == "Darwin\n"
