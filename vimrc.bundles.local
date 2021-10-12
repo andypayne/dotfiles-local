@@ -13,6 +13,11 @@ if has("unix")
   else
     Plug 'Shougo/deoplete.nvim'
     let g:deoplete#enable_at_startup = 1
+    " If vim startup errors are encountered, try:
+    " 1. Deactivate any python environment
+    " 2. pip install -U pip
+    " 3. pip install -U pynvim
+    " 4. pip3 install -U pynvim
   endif
 endif
 "Plug 'ternjs/tern_for_vim'
