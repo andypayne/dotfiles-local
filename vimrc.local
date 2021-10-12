@@ -121,3 +121,7 @@ let g:ale_python_pylint_options = '--disable=invalid-name,missing-docstring --ma
 nnoremap <silent> <C-j> yiw:Rg <C-r>"<CR>
 vnoremap <silent> <C-j> y:Rg <C-r>"<CR>
 
+" vim-svelte indent
+let g:svelte_indent_script = 0
+let g:svelte_indent_style = 0
+
