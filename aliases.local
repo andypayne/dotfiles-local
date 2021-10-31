@@ -27,6 +27,11 @@ jsonpp() {
   python -mjson.tool "$@"
 }
 
+# Validate jsonlines files.
+validate_jsonlines() {
+  cat "$@" | python -c 'import sys;import json;[None for line in sys.stdin if json.loads(line)]'
+}
+
 # ripgrep - find filenames that match a pattern (not file contents)
 rgf() {
   rg --files | rg "$@"
