@@ -6,6 +6,7 @@ bkgd() {
 case `uname` in
   Darwin)
     alias ls='ls -lrtaFG'
+    alias kill_audio="sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`"
   ;;
   Linux)
     alias ls='ls -alFG --color'
