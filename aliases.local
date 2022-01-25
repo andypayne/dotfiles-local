@@ -99,7 +99,11 @@ renv() {
   if [ "type deactivate" == 'deactivate is a shell function from env/bin/activate' ]; then
     deactivate
   fi
-  . ./env/bin/activate
+  if [[ -f "env/bin/activate" ]]; then
+    . ./env/bin/activate
+  elif [[ -f "venv/bin/activate" ]]; then
+    . ./venv/bin/activate
+  fi
 }
 
 # ffprobe/ffmpeg to display the duration of a media file
