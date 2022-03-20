@@ -1,11 +1,3 @@
-# Powrlevel10k
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # Console Do Not Track (DNT) - https://consoledonottrack.com/
 export DO_NOT_TRACK=1
 
@@ -84,18 +76,18 @@ zle -N down-line-or-local-history
 # added by Anaconda3 2019.10 installer
 # >>> conda init >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$(CONDA_REPORT_ERRORS=false '/opt/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    \eval "$__conda_setup"
-else
-    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/opt/anaconda3/etc/profile.d/conda.sh"
-        CONDA_CHANGEPS1=false conda activate base
-    else
-        \export PATH="/opt/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+#__conda_setup="$(CONDA_REPORT_ERRORS=false '/opt/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    \eval "$__conda_setup"
+#else
+#    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+#        . "/opt/anaconda3/etc/profile.d/conda.sh"
+#        CONDA_CHANGEPS1=false conda activate base
+#    else
+#        \export PATH="/opt/anaconda3/bin:$PATH"
+#    fi
+#fi
+#unset __conda_setup
 # <<< conda init <<<
 
 # nvm - node, npm
@@ -131,6 +123,13 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# Powrlevel10k
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 # Powerlevel10k for zsh
 # https://github.com/romkatv/powerlevel10k#manual
 source ~/powerlevel10k/powerlevel10k.zsh-theme
@@ -204,4 +203,22 @@ export LANG="en_US.UTF-8"
 if [ -d "$HOME/.local/bin" ]; then
   export PATH="$PATH:$HOME/.local/bin"
 fi
+
+## To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/andy/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/andy/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/andy/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/andy/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
