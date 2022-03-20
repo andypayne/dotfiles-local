@@ -104,6 +104,8 @@ renv() {
     . ./env/bin/activate
   elif [[ -f "venv/bin/activate" ]]; then
     . ./venv/bin/activate
+  elif [[ -f ".env/bin/activate" ]]; then
+    . ./.env/bin/activate
   fi
 }
 
