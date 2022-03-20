@@ -119,3 +119,24 @@ durat() {
     "$@"
 }
 
+
+# Count matches independent of lines, for files with no newlines (ex: raw json)
+count_matches() {
+  if [ ! "$#" -gt 1 ]; then
+    echo "Usage: $0 <pattern> <file(s)>"; return 1;
+  fi
+  pat=$1
+  echo "pattern: $pat"
+  # All arguments after the first are files to search
+  files=("${@:2}")
+  num_files=${#files[@]}
+  echo "# files: $num_files"
+  for f in $files
+  do
+    res=$(grep -o $pat $f | wc -l)
+    if (( $res > 0 )); then
+      echo "$res: $f"
+    fi
+  done
+}
+
