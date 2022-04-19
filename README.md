@@ -14,6 +14,7 @@ ln -s ~/dotfiles-local/vimrc.local ~/.vimrc.local
 ln -s ~/dotfiles-local/gitconfig.local ~/.gitconfig.local
 ln -s ~/dotfiles-local/tmux.conf.local ~/.tmux.conf.local
 ln -s ~/dotfiles-local/alacritty.yml ~/.config/alacritty/alacritty.yml
+(or ln -s ~/dotfiles-local/alacritty.yml ~/.alacritty.yml)
 ```
 
 ### Plugins etc
