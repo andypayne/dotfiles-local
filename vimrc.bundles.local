@@ -35,3 +35,4 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'andypayne/vim-checkbox'
 Plug 'tpope/vim-vinegar'
 Plug 'rhysd/vim-clang-format'
+Plug 'psf/black', { 'branch': 'stable' }
