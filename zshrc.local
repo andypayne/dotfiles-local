@@ -222,7 +222,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-command -v brew >/dev/null 2>&1 || {
+command -v brew >/dev/null 2>&1 && {
   echo >&2 "Homebrew is installed";
   #command -v brew >/dev/null 2>&1 && { echo >&2 "Installing Homebrew Now"; \
   # OpenSSL 3 brew
