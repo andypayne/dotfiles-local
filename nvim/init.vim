@@ -12,6 +12,10 @@
 ":set mouse=a
 :set ignorecase
 
+" Inform Neovim of the python venv
+" For Black: https://github.com/averms/black-nvim
+let g:python3_host_prog = $HOME . '/.local/venv/nvim/bin/python'
+
 call plug#begin()
 
 Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
