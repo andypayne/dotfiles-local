@@ -27,11 +27,15 @@ Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
 Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
 "Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}  " Auto Completion
-Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
 Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
+"Plug 'averms/black-nvim', {'do': ':UpdateRemotePlugins'}
+Plug 'psf/black', { 'branch': 'stable' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
+
 
 set encoding=UTF-8
 
@@ -42,20 +46,29 @@ nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
+let g:NERDTreeDirArrowExpandable="+"
+let g:NERDTreeDirArrowCollapsible="~"
+
 
 " CtrlP
 "nnoremap <C-b> :CtrlPBuffer<CR>
 " (This one is actually just vim buffer switching)
 nnoremap <Space><Space> :b#<CR>
 
+" python black formatter
+"nnoremap <buffer><silent> <c-q> <cmd>call Black()<cr>
+"inoremap <buffer><silent> <c-q> <cmd>call Black()<cr>
+"    let g:black#settings = {
+"        \ 'fast': 1,
+"        \ 'line_length': 100
+"    \}
+
+
 nmap <F8> :TagbarToggle<CR>
 
 :set completeopt-=preview " For No Previews
 
 :colorscheme jellybeans
-
-let g:NERDTreeDirArrowExpandable="+"
-let g:NERDTreeDirArrowCollapsible="~"
 
 " --- Just Some Notes ---
 " :PlugClean :PlugInstall :UpdateRemotePlugins
@@ -106,4 +119,70 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  -- A list of parser names, or "all"
+  ensure_installed = { "c", "lua", "rust", "cpp", "python", "javascript" },
+
+  -- Install parsers synchronously (only applied to `ensure_installed`)
+  sync_install = false,
+
+  -- Automatically install missing parsers when entering buffer
+  auto_install = true,
+
+  -- List of parsers to ignore installing (for "all")
+  --ignore_install = { "javascript" },
+  ignore_install = { "" },
+
+  highlight = {
+    -- `false` will disable the whole extension
+    enable = true,
+
+    -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
+    -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
+    -- the name of the parser)
+    -- list of language that will be disabled
+    --disable = { "c", "rust" },
+	disable = {},
+
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
+  refactor = {
+    highlight_definitions = { enable = true },
+	highlight_current_scope = { enable = false },
+    smart_rename = {
+      enable = true,
+      keymaps = {
+        smart_rename = "grr",
+      },
+    },
+    navigation = {
+      enable = true,
+      keymaps = {
+        goto_definition = "gnd",
+        list_definitions = "gnD",
+        list_definitions_toc = "gO",
+        goto_next_usage = "<a-*>",
+        goto_previous_usage = "<a-#>",
+      },
+    },
+  },
+  indent = {
+    enable = true,
+  },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = '<CR>',
+      scope_incremental = '<CR>',
+      node_incremental = '<TAB>',
+      node_decremental = '<S-TAB>',
+    },
+  },
+}
+EOF
 
