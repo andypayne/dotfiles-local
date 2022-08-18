@@ -22,7 +22,7 @@ Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
 Plug 'https://github.com/preservim/nerdtree' " NerdTree
 Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
 Plug 'https://github.com/vim-airline/vim-airline' " Status bar
-Plug 'https://github.com/lifepillar/pgsql.vim' " PSQL Pluging needs :SQLSetType pgsql.vim
+Plug 'https://github.com/lifepillar/pgsql.vim' " PSQL Plugin needs :SQLSetType pgsql.vim
 Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
 Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
 "Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
@@ -35,7 +35,6 @@ Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
-
 
 set encoding=UTF-8
 
