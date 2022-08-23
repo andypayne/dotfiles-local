@@ -5,10 +5,12 @@
 :set number
 ":set relativenumber
 :set autoindent
-:set tabstop=4
-:set shiftwidth=4
+:set tabstop=2
+:set shiftwidth=2
 :set smarttab
-:set softtabstop=4
+:set smartindent
+set expandtab
+:set softtabstop=2
 ":set mouse=a
 :set ignorecase
 
