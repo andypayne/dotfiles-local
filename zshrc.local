@@ -223,7 +223,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 command -v brew >/dev/null 2>&1 && {
-  echo >&2 "Homebrew is installed";
+  # echo >&2 "Homebrew is installed";
   #command -v brew >/dev/null 2>&1 && { echo >&2 "Installing Homebrew Now"; \
   # OpenSSL 3 brew
   #If you need to have openssl@3 first in your PATH, run:
