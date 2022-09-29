@@ -12,7 +12,7 @@
 set expandtab
 :set softtabstop=2
 ":set mouse=a
-:set ignorecase
+:set ignorecase smartcase
 
 " Inform Neovim of the python venv
 " For Black: https://github.com/averms/black-nvim
