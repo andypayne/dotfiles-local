@@ -38,6 +38,8 @@ Plug 'psf/black', { 'branch': 'stable' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 
 set encoding=UTF-8
 
@@ -51,6 +53,11 @@ nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
 
+" Find files using Telescope
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " CtrlP
 "nnoremap <C-b> :CtrlPBuffer<CR>
@@ -248,4 +255,5 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
+
 
