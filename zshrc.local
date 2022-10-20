@@ -237,4 +237,8 @@ command -v brew >/dev/null 2>&1 && {
 if [ -d "$HOME/.cargo" ]; then
   source "$HOME/.cargo/env"
 fi
+# For rust-analyzer
+if [ -d "$HOME/.rustup/toolchains/stable-x86_64-apple-darwin/bin" ]; then
+  export PATH="$HOME/.rustup/toolchains/stable-x86_64-apple-darwin/bin:$PATH"
+fi
 
