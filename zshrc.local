@@ -233,3 +233,8 @@ command -v brew >/dev/null 2>&1 && {
   #  export CPPFLAGS="-I/usr/local/opt/openssl@3/include"
 }
 
+# For rust/cargo
+if [ -d "$HOME/.cargo" ]; then
+  source "$HOME/.cargo/env"
+fi
+
