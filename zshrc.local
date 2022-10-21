@@ -242,3 +242,7 @@ if [ -d "$HOME/.rustup/toolchains/stable-x86_64-apple-darwin/bin" ]; then
   export PATH="$HOME/.rustup/toolchains/stable-x86_64-apple-darwin/bin:$PATH"
 fi
 
+if [ -d /usr/local/opt/llvm/bin ]; then
+  export PATH="/usr/local/opt/llvm/bin:$PATH"
+fi
+
