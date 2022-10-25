@@ -97,7 +97,7 @@ fi
 
 # Cycle python virtual environments
 renv() {
-  if [ "type deactivate" == 'deactivate is a shell function from env/bin/activate' ]; then
+  if [[ "type deactivate" == 'deactivate is a shell function from env/bin/activate' || "type deactivate" == 'deactivate is a shell function from ./env/bin/activate' ]]; then
     deactivate
   fi
   if [[ -f "env/bin/activate" ]]; then
