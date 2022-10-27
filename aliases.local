@@ -7,6 +7,8 @@ case `uname` in
   Darwin)
     alias ls='ls -lrtaFG'
     alias kill_audio="sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`"
+    alias shell_rosetta='(){ arch -x86_64 $SHELL ; }'
+    alias shell_native='(){ arch -arm64e $SHELL ; }'
   ;;
   Linux)
     alias ls='ls -alFG --color'
