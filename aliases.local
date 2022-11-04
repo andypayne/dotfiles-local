@@ -9,6 +9,14 @@ case `uname` in
     alias kill_audio="sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`"
     alias shell_rosetta='(){ arch -x86_64 $SHELL ; }'
     alias shell_native='(){ arch -arm64e $SHELL ; }'
+    if [[ -x "$(command -v docker)" && $(docker images | grep valgrind) ]]; then
+      # Run the valgrind docker image, optionally passing params to allow running valgrind directly.
+      # Example:
+      # dvalgrind /bin/sh -c 'g++ leak.cpp -o test_leak; valgrind ./test_leak'
+      dvalgrind() {
+        docker run -it -v $PWD:/tmp -w /tmp valgrind:1.0 $@
+      }
+    fi
   ;;
   Linux)
     alias ls='ls -alFG --color'
