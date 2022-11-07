@@ -156,4 +156,10 @@ if command -v "nvim" > /dev/null 2>&1; then
   }
 fi
 
+if [ -x "$(command -v exa)" ]; then
+  #unalias ll
+  l() {
+    exa --all --long --sort=mod --git --header --icons --extended "$@"
+  }
+fi
 
