@@ -107,15 +107,26 @@ fi
 
 # Cycle python virtual environments
 renv() {
-  if [[ "type deactivate" == 'deactivate is a shell function from env/bin/activate' || "type deactivate" == 'deactivate is a shell function from ./env/bin/activate' ]]; then
+  if [ -z ${VIRTUAL_ENV+x} ]; then
+    # No active virtual environment
+  else
+    echo "Deactivating virtual env in '$VIRTUAL_ENV'"
     deactivate
   fi
   if [[ -f "env/bin/activate" ]]; then
+    echo "Activating virtual env in 'env'"
     . ./env/bin/activate
   elif [[ -f "venv/bin/activate" ]]; then
+    echo "Activating virtual env in 'venv'"
     . ./venv/bin/activate
   elif [[ -f ".env/bin/activate" ]]; then
+    echo "Activating virtual env in '.env'"
     . ./.env/bin/activate
+  elif [[ -x "$(command -v pipenv)" && -f $(pipenv --venv)/bin/activate ]]; then
+    echo "Activating virtual env in '$(pipenv --venv)'"
+    . $(pipenv --venv)/bin/activate
+  else
+    echo "Error: Unable to find a virtual environment to activate."
   fi
 }
 
