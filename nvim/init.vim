@@ -173,8 +173,8 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 require('lspconfig')['pyright'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
+  on_attach = on_attach,
+  flags = lsp_flags,
 }
 require('lspconfig')['tsserver'].setup{
     on_attach = on_attach,
@@ -188,6 +188,47 @@ require('lspconfig')['rust_analyzer'].setup{
       ["rust-analyzer"] = {}
     }
 }
+
+-- -- `ruff-lsp`.
+-- require('lspconfig').ruff_lsp.setup{
+--   settings = {
+--     ruff_lsp = {
+--       -- Any extra CLI arguments for `ruff` go here.
+--       args = {},
+--     }
+--   }
+-- }
+--require'lspconfig'.ruff_lsp.setup{}
+-- require('lspconfig').ruff_lsp.setup{}
+-- require('lspconfig')['ruff-lsp'].setup{
+--     on_attach = on_attach,
+--     flags = lsp_flags,
+--     cmd = { "ruff-lsp" },
+--     -- Server-specific settings...
+--     settings = {
+--       ["ruff-lsp"] = {}
+--     }
+-- }
+-- local configs = require 'lspconfig.configs'
+-- if not configs.ruff_lsp then
+--  configs.ruff_lsp = {
+--    default_config = {
+--    cmd = { "ruff-lsp" },
+--    filetypes = {'python'},
+--    root_dir = require('lspconfig').util.find_git_ancestor,
+--    settings = {
+--      ruff_lsp = {
+--        -- Any extra CLI arguments for `ruff` go here.
+--        args = {}
+--      }
+--    }
+--  }
+-- }
+-- end
+
+-- require('lspconfig').ruff_lsp.setup {
+--   on_attach = on_attach,
+-- }
 EOF
 
 lua <<EOF
