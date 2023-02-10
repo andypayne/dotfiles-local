@@ -222,6 +222,9 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+[[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
+
 command -v brew >/dev/null 2>&1 && {
   # echo >&2 "Homebrew is installed";
   #command -v brew >/dev/null 2>&1 && { echo >&2 "Installing Homebrew Now"; \
