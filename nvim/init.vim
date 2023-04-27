@@ -8,11 +8,15 @@
 :set tabstop=2
 :set shiftwidth=2
 :set smarttab
-:set smartindent
+":set smartindent
+:set cindent
 set expandtab
 :set softtabstop=2
 ":set mouse=a
 :set ignorecase smartcase
+
+" Leader
+"let mapleader = ","
 
 " Inform Neovim of the python venv
 " For Black: https://github.com/averms/black-nvim
@@ -40,6 +44,8 @@ Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+"Plug 'dccsillag/magma-nvim', { 'do': ':UpdateRemotePlugins' }
+
 
 set encoding=UTF-8
 
@@ -73,6 +79,15 @@ nnoremap <Space><Space> :b#<CR>
 "        \ 'line_length': 100
 "    \}
 
+" Magma - Jupyter notebook plugin
+"nnoremap <silent><expr> <LocalLeader>r  :MagmaEvaluateOperator<CR>
+"nnoremap <silent>       <LocalLeader>rr :MagmaEvaluateLine<CR>
+"xnoremap <silent>       <LocalLeader>r  :<C-u>MagmaEvaluateVisual<CR>
+"nnoremap <silent>       <LocalLeader>rc :MagmaReevaluateCell<CR>
+"nnoremap <silent>       <LocalLeader>rd :MagmaDelete<CR>
+"nnoremap <silent>       <LocalLeader>ro :MagmaShowOutput<CR>
+"let g:magma_automatically_open_output = v:false
+"let g:magma_image_provider = "ueberzug"
 
 nmap <F8> :TagbarToggle<CR>
 
