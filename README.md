@@ -16,6 +16,7 @@ ln -s ~/dotfiles-local/gitconfig.local ~/.gitconfig.local
 ln -s ~/dotfiles-local/tmux.conf.local ~/.tmux.conf.local
 ln -s ~/dotfiles-local/alacritty.yml ~/.config/alacritty/alacritty.yml
 (or ln -s ~/dotfiles-local/alacritty.yml ~/.alacritty.yml)
+ln -s ~/dotfiles-local/kitty/kitty.conf ~/.config/kitty/kitty.conf
 ```
 
 ### Plugins etc
