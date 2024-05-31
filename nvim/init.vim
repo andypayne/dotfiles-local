@@ -45,6 +45,8 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 "Plug 'dccsillag/magma-nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Exafunction/codeium.vim', { 'branch': 'main' }  " Codeium, https://codeium.com/vim_tutorial
+
 
 
 set encoding=UTF-8
