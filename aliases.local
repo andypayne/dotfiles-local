@@ -162,7 +162,11 @@ count_matches() {
   done
 }
 
-if command -v "nvim" > /dev/null 2>&1; then
+if command -v "lvim" > /dev/null 2>&1; then
+  nv() {
+    lvim "$@"
+  }
+elif command -v "nvim" > /dev/null 2>&1; then
   nv() {
     nvim "$@"
   }
@@ -174,4 +178,13 @@ if [ -x "$(command -v exa)" ]; then
     exa --all --long --sort=mod --git --header --icons --extended "$@"
   }
 fi
+
+mulpull() {
+  if [ $# -gt 0 ]
+  then
+    echo "mulpull: Run git pull on all projects in the current directory"
+    return
+  fi
+  find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \;
+}
 
